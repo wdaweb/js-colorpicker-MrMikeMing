@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin:0;
+        padding: 0;
+    }
+body{
+    width:100vw;
+    height:100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(20, 19, 19, 0.801);
+}
+.b-1
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 500px;
+    height :600px;
+    border-radius: 5%;
+    flex-direction:column;
+    background-color: hsl(39, 100%, 55%);
+    box-shadow: inset 0 0 0.5em gold, 0 0 4em greenyellow;
+   
+}
+.b-2
+{
+    width: 300px;
+}
+#color{
+    width: 400px;
+    height :300px;
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    font-size: 3rem;
+    display: flex;
+    justify-content: center;    
+    align-items: center;
+    box-shadow: 0 0 10px ;
+   
+}
+
+</style>
+<body>
+    <div class="b-1">
+        <div id=color style="background-color:rgb(255, 153, 102); color: rgb(102, 255, 153)">--#00cc44--</div>
+        <br>
+        <div class="b-2">
+        <input type="button" class="btn btn-danger" onclick="btnr()" value="R">
+        <input id="R" type="range" min="0" max="255" value="102" onchange="sli()">
+        <br>
+        
+        <input type="button" class="btn btn-success" onclick="btng()" value="G">
+        <input id="G" type="range" min="0" max="255" value="255" onchange="sli()">
+        <br>
+        
+        <input type="button" class="btn btn-primary" onclick="btnb()" value="B">
+        <input id="B" type="range" min="0" max="255" value="103" onchange="sli()">
+        <br>
+        
+        <input type="button" id="ran" class="btn btn-info" onclick="less()" value="-">
+        <input type="button" id="ran" class="btn btn-info" onclick="plus()" value="+">
+        <input type="button" id="ran" class="btn btn-info" onclick="rand()" value="隨機">
+            </div>
+        </div>
+        <script>
+            var colorbox=document.getElementById("color");
+            var r1=document.getElementById("ran");
+            var red,bule,green,r1;
+        
+
+                function rand() {
+                    red = Math.floor((Math.random() * 256));
+                    green = Math.floor((Math.random() * 256));
+                    bule = Math.floor((Math.random() * 256));
+                    colorbox.style = "background:rgb(" + red + "," + green+ "," + bule+ ")";
+                }
+
+                function sli() {
+                    red = document.getElementById("R").value;
+                    green = document.getElementById("G").value;
+                    bule = document.getElementById("B").value;
+                    colorbox.style = "background:rgb(" + red + "," + green + "," + bule + ")";
+                }
+
+                function less() {
+                    red = document.getElementById("R").value--;
+                    green = document.getElementById("G").value--;
+                    bule = document.getElementById("B").value--;
+                    colorbox.style = "background:rgb(" + red + "," + green + "," + bule + ")";
+                }
+
+                function plus() {
+                    red = document.getElementById("R").value++;
+                    green = document.getElementById("G").value++;
+                    bule = document.getElementById("B").value++;
+                    colorbox.style = "background:rgb(" + red + "," + green + "," + bule + ")";    
+                }
+
+               
+               
+
+                function btnr()
+                {
+                var cr=prompt("请输入0-255的數字","")
+                if (cr<=255 & cr>=0)
+                    {
+                        colorbox.style = "background:rgb(" + red + "," + green + "," + cb + ")"; 
+                    nowr = cr;
+                    }
+                    else{
+                    alert("輸入錯誤的數字");
+                    btnr();
+                    }
+                }
+                function btnb()
+                {
+                var cb=prompt("请输入0-255的數字","")
+                if (cb<=255 & cb>=0)
+                    {
+                        colorbox.style = "background:rgb(" + red + "," + green + "," + cb + ")"; 
+                    nowb = cb;
+                    }
+                    else{
+                    alert("輸入錯誤的數字");
+                    btnb();
+                    }
+                }
+                function btng()
+                {
+                var cg=prompt("请输入0-255的數字","")
+                if (cg<=255 & cg>=0)
+                    {
+                        colorbox.style = "background:rgb(" + red + "," + cg + "," + bule + ")"; 
+                    nowg = cg;
+                    }
+                    else{
+                    alert("輸入錯誤的數字");
+                    btng();
+                    }
+                }
+
+                
+
+
+
+                
+           
+        </script>
+       
+    
+</body>
+</html>
